@@ -38,6 +38,9 @@ class FormPostsController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request,[
+            'title' => 'required|max:5'
+        ]);
         FormPost::create($request->all());
         return redirect('/form-posts');
     }
