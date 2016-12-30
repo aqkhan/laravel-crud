@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\FormPost;
+use App\Http\Requests\CreateFormPostRequest;
 use Illuminate\Http\Request;
 
 class FormPostsController extends Controller
@@ -35,12 +36,16 @@ class FormPostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateFormPostRequest $request)
     {
-        //
+        // One way to validate (without making request is commented below)
+
+        /*
         $this->validate($request,[
             'title' => 'required|max:5'
         ]);
+        */
+
         FormPost::create($request->all());
         return redirect('/form-posts');
     }
