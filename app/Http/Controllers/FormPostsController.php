@@ -15,7 +15,8 @@ class FormPostsController extends Controller
      */
     public function index()
     {
-        $posts = FormPost::all();
+        //$posts = FormPost::all();
+        $posts = FormPost::OrderByName();
         return view('formposts.index', compact('posts'));
     }
 
