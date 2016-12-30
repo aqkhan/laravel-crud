@@ -9,4 +9,5 @@
         {{csrf_field()}}
         <input type="submit" name="submit">
     </form>
+    {!! Form::open() !!}
 @endsection

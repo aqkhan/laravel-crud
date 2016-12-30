@@ -18,3 +18,4 @@ Route::get('/', function () {
 // Crud App
 
 Route::resource('/posts', 'PostsController');
+Route::resource('/form-posts', 'FormPostsController');
