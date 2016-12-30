@@ -31,4 +31,12 @@ class User extends Authenticatable
     public function posts() {
         return $this->hasMany('App\Post');
     }
+
+    // Below is an accessor method example
+    // Naming convention is "get" is a fix keyword, "name of attribute comes second" with first letter capital and "Attribute" is a fix keyword as well
+    // Accessor manipulates data after it's retrieved from database and doesn't modifies the value retrieved from column.
+
+    public function getNameAttribute($value) {
+        return strtoupper($value);
+    }
 }

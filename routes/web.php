@@ -11,6 +11,7 @@
 |
 */
 
+use App\User;
 use Carbon\Carbon;
 
 Route::get('/', function () {
@@ -31,4 +32,10 @@ Route::get('/dates', function() {
     // Using Carbon
     $newDate = Carbon::now();
     echo 'Using Carbon: ' . $newDate;
+});
+
+// Exhibit Accessors functionality. Define the accessor in the model first. See getNameAttribute() method in User model for reference.
+Route::get('/accessor', function() {
+    $user = User::findOrFail(1);
+    echo $user->name;
 });
